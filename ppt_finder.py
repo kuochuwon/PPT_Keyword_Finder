@@ -9,9 +9,17 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from create_index import Ui_Dialog
 
 
 class Ui_MainWindow(object):
+    def index_window(self):
+        # HINT 這邊根據create_index檔內的類別進行設定，根據情況會是QDialog or QWidget
+        self.window = QtWidgets.QDialog()
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(883, 475)
@@ -54,8 +62,9 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
         self.retranslateUi(MainWindow)
+
+        self.pushButton_2.clicked.connect(self.index_window)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
