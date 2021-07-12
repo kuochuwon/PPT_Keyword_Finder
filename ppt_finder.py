@@ -9,14 +9,14 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from create_index import Ui_Dialog
+from create_index_2 import Ui_Form
 
 
 class Ui_MainWindow(object):
     def index_window(self):
         # HINT 這邊根據create_index檔內的類別進行設定，根據情況會是QDialog or QWidget
-        self.window = QtWidgets.QDialog()
-        self.ui = Ui_Dialog()
+        self.window = QtWidgets.QWidget()
+        self.ui = Ui_Form()
         self.ui.setupUi(self.window)
         self.window.show()
 
