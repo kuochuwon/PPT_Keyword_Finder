@@ -22,7 +22,7 @@ class Ui_Dialog(object):
         #     initialFilter=None
         # )
         response = QFileDialog.getOpenFileNames(
-            parent=QtWidgets,
+            parent=None,
             caption="Select your file",
             directory=os.getcwd()
         )

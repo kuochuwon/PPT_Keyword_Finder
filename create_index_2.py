@@ -14,8 +14,9 @@ from PyQt5.QtWidgets import QFileDialog
 
 class Ui_Form(object):
     def get_powerpoint_files(self):
+        # qwid = QtWidgets
         response = QFileDialog.getOpenFileNames(
-            parent=self,
+            parent=None,
             caption="Select your file",
             directory=os.getcwd(),
             filter=None,
