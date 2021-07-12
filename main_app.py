@@ -1,16 +1,7 @@
 import sys
 from ppt_finder import Ui_MainWindow
-from create_index import Ui_Dialog
 from PyQt5.QtWidgets import (QMainWindow,
-                             QApplication,
-                             QWidget,
-                             QPushButton,
-                             QAction,
-                             QLineEdit,
-                             QMessageBox,
-                             QPlainTextEdit)
-from PyQt5 import QtCore
-from PyQt5.QtCore import pyqtSlot
+                             QApplication)
 
 
 class App(QMainWindow, Ui_MainWindow):
