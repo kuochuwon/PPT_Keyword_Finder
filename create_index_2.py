@@ -29,10 +29,17 @@ class Ui_Form(object):
 
         # 在空白處加入檔名資訊
         self.listWidget_3.addItems(file_list)
-        return file_list  # TODO Wrong
+        # return file_list  # TODO Wrong
 
-    def get_keyword_list(self, keyword):
-        print(f"hello world! {keyword}")
+    def get_keyword_list(self):
+        all_item = []
+        count = self.listWidget_3.count()
+        for i in range(count):
+            all_item.append(self.listWidget_3.item(i).text())
+        # current = self.listWidget_3.currentItem()
+        print(count)
+        # print(current)
+        print("hello world!")
 
     # TODO error happened
     def closeEvent(self, Form):
@@ -50,7 +57,7 @@ class Ui_Form(object):
         self.pushButton_2.setFont(font)
         self.pushButton_2.setAutoDefault(False)
         self.pushButton_2.setObjectName("pushButton_2")
-        temp = self.pushButton_2.clicked.connect(
+        self.pushButton_2.clicked.connect(
             self.get_powerpoint_files)  # TODO Wrong
         self.buttonBox = QtWidgets.QDialogButtonBox(Form)
         self.buttonBox.setGeometry(QtCore.QRect(10, 210, 341, 32))
