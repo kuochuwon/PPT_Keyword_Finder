@@ -44,21 +44,25 @@ class PowerPoint_keyword_search():
             pptSel.Close()
         return ppt_library
 
-    def decode_find_keyword(self, mode):
+    def decode_find_keyword(self, keyword):
+        result = ""
         with open("ppt_library.txt", "r") as f:
             library = json.load(f)
-            keyword1 = str(input("請輸入關鍵字:\n"))
+            # keyword = str(input("請輸入關鍵字:\n"))
             for key, value in library.items():
                 cunt = 0
                 # print("filename:", key, "\n")
                 for eachvalue in value:
-                    if keyword1 in eachvalue:
+                    if keyword in eachvalue:
                         if cunt == 0:
                             print("filename:", key)
+                            result += f"filename: {key} \n"
                             cunt += 1
                         print("value: ", eachvalue, "\n")
-            print("-----------查詢完畢，請按任意鍵結束-----------\n")
-            # msvcrt.getch()
+                        result += f"value: {eachvalue} \n"
+        return result
+        # print("-----------查詢完畢，請按任意鍵結束-----------\n")
+        # msvcrt.getch()
 
 
 def excute():
