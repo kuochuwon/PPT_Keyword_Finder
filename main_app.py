@@ -15,7 +15,6 @@ class App(QMainWindow, Ui_MainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = App()
-    # sys.exit(app.exec_())
     try:
         sys.exit(app.exec_())
     except SystemExit:

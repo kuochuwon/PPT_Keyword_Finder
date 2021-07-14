@@ -11,6 +11,7 @@ import os
 import json
 import msvcrt
 from win32com.client import Dispatch  # noqa  :flake8 say it's unused but actually used
+from pathlib import Path
 
 
 class PowerPoint_keyword_search():
