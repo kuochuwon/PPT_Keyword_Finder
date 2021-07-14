@@ -33,7 +33,7 @@ class Ui_Form(object):
         self.listWidget_3.addItems(file_list)
         # return file_list  # TODO Wrong
 
-    def create_keyword_library(self):
+    def create_keyword_library(self, Form):
         all_item = []
         count = self.listWidget_3.count()
         for i in range(count):
@@ -42,10 +42,10 @@ class Ui_Form(object):
         with open("ppt_library.txt", "w") as f:
             json.dump(ppt_library, f)
             print("write file complete")
-            msvcrt.getch()
+            # msvcrt.getch() #會使mainwindow當掉
+        Form.close()
 
     # TODO error happened
-
     def closeEvent(self, Form):
         print("QWidget closed")
         Form.close()
@@ -74,12 +74,11 @@ class Ui_Form(object):
             QtWidgets.QDialogButtonBox.Cancel | QtWidgets.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName("buttonBox")
 
-        self.buttonBox.accepted.connect(self.create_keyword_library)
+        self.buttonBox.accepted.connect(lambda: self.create_keyword_library(Form))
 
-        # self.buttonBox.rejected.connect(
-        #     self.closeEvent(Form))  # HINT 這樣寫會報錯
+        # HINT for passing argument, using lambda expression
         self.buttonBox.rejected.connect(
-            Form.close)  # HINT 取消並關閉視窗
+            lambda: self.closeEvent(Form))
 
         self.listWidget_3 = QtWidgets.QListWidget(Form)  # HINT 文字輸入方塊
         self.listWidget_3.setGeometry(QtCore.QRect(30, 70, 239, 78))

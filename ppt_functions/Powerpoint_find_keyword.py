@@ -25,13 +25,12 @@ class PowerPoint_keyword_search():
                 file_list.append(names)
         return file_list
 
+    # TODO 函式跑完後，PPT沒有關閉完全，但不影響後續程式運行
     def extractwords_into_dict(self, file_list, path=None):
         ppt_library = dict()
         for each_file in file_list:
             filename = Path(each_file).name
             ppt_library[filename] = []
-            # folder = os.getcwd()
-            # file_name_complete = folder + "\\" + each_file
             ppt = win32com.client.Dispatch('PowerPoint.Application')
             pptSel = ppt.Presentations.Open(str(each_file))
             slide_count = pptSel.Slides.Count
@@ -48,24 +47,18 @@ class PowerPoint_keyword_search():
     def decode_find_keyword(self, mode):
         with open("ppt_library.txt", "r") as f:
             library = json.load(f)
-            if mode == 1:
-                keyword1 = str(input("請輸入關鍵字:\n"))
-                for key, value in library.items():
-                    cunt = 0
-                    # print("filename:", key, "\n")
-                    for eachvalue in value:
-                        if keyword1 in eachvalue:
-                            if cunt == 0:
-                                print("filename:", key)
-                                cunt += 1
-                            print("value: ", eachvalue, "\n")
-                print("-----------查詢完畢，請按任意鍵結束-----------\n")
-                msvcrt.getch()
-            elif mode == 2:
-                print("目前不支援\n")
-                print("請按任意鍵結束\n")
-                msvcrt.getch()
-                pass
+            keyword1 = str(input("請輸入關鍵字:\n"))
+            for key, value in library.items():
+                cunt = 0
+                # print("filename:", key, "\n")
+                for eachvalue in value:
+                    if keyword1 in eachvalue:
+                        if cunt == 0:
+                            print("filename:", key)
+                            cunt += 1
+                        print("value: ", eachvalue, "\n")
+            print("-----------查詢完畢，請按任意鍵結束-----------\n")
+            # msvcrt.getch()
 
 
 def excute():
