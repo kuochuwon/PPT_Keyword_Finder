@@ -28,11 +28,12 @@ class PowerPoint_keyword_search():
     def extractwords_into_dict(self, file_list, path=None):
         ppt_library = dict()
         for each_file in file_list:
-            ppt_library[each_file] = []
-            folder = os.getcwd()
-            file_name_complete = folder + "\\" + each_file
+            filename = Path(each_file).name
+            ppt_library[filename] = []
+            # folder = os.getcwd()
+            # file_name_complete = folder + "\\" + each_file
             ppt = win32com.client.Dispatch('PowerPoint.Application')
-            pptSel = ppt.Presentations.Open(file_name_complete)
+            pptSel = ppt.Presentations.Open(str(each_file))
             slide_count = pptSel.Slides.Count
             for i in range(1, slide_count + 1):
                 shape_count = pptSel.Slides(i).Shapes.Count
@@ -40,7 +41,7 @@ class PowerPoint_keyword_search():
                     if pptSel.Slides(i).Shapes(j).HasTextFrame:
                         s = pptSel.Slides(i).Shapes(j).TextFrame.TextRange.Text
                         if s != '':
-                            ppt_library[each_file].append(s)
+                            ppt_library[filename].append(s)
             pptSel.Close()
         return ppt_library
 
