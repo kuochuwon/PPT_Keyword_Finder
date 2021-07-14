@@ -35,6 +35,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(720, 50, 131, 51))
+        # self.pushButton.setSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         font = QtGui.QFont()
         font.setFamily("微軟正黑體")
         font.setPointSize(18)
@@ -50,6 +51,7 @@ class Ui_MainWindow(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+
         self.pushButton_2.setGeometry(QtCore.QRect(580, 50, 131, 51))
         font = QtGui.QFont()
         font.setFamily("微軟正黑體")
@@ -58,6 +60,8 @@ class Ui_MainWindow(object):
         self.pushButton_2.setAutoDefault(False)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.clicked.connect(self.index_window)
+        # self.pushButton_2.setSizePolicy(QtWidgets.QSizePolicy.Expanding,
+        #                                 QtWidgets.QSizePolicy.Expanding)
 
         self.plainTextEdit_output = QtWidgets.QPlainTextEdit(self.centralwidget)
         self.plainTextEdit_output.setGeometry(QtCore.QRect(10, 170, 691, 201))
@@ -84,5 +88,6 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "開始搜尋"))
+
         self.label.setText(_translate("MainWindow", "請輸入關鍵字(須先建立索引)"))
         self.pushButton_2.setText(_translate("MainWindow", "建立索引"))
