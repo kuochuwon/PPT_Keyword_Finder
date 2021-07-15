@@ -10,6 +10,10 @@
 (由上可知，此程式不一定只能搜尋教會簡報，只要是PPT都能查。)
 
 ## 用法
+* 查看動畫
+* 若搜尋成功，在下方文字方塊確認符合的檔名
+* 到資料夾撈取符合條件的檔案
 
 
 ## 原始檔
+[GitHub](https://github.com/kuochuwon/PPT_Keyword_Finder)
