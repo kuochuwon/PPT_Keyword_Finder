@@ -28,6 +28,10 @@ class Ui_MainWindow(object):
         text_value = self.plainTextEdit_input.toPlainText()
         print(text_value)
         result = ppt_finder.decode_find_keyword(text_value)
+        font = QtGui.QFont()
+        font.setFamily("微軟正黑體")
+        font.setPointSize(12)
+        self.plainTextEdit_output.setFont(font)
         self.plainTextEdit_output.insertPlainText(result)
 
     def setupUi(self, MainWindow):
@@ -64,6 +68,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.clicked.connect(self.index_window)
         self.gridLayout.addWidget(self.pushButton_2, 0, 2, 2, 1)
         self.plainTextEdit_input = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.plainTextEdit_input.setFont(font)
         self.plainTextEdit_input.setObjectName("textEdit")
         self.gridLayout.addWidget(self.plainTextEdit_input, 3, 0, 1, 1)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
