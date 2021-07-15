@@ -55,13 +55,14 @@ class PowerPoint_keyword_search():
                 for eachvalue in value:
                     if keyword in eachvalue:
                         if cunt == 0:
-                            print("filename:", key)
-                            result += f"filename: {key} \n"
+                            print("檔案名稱:", key)
+                            result += f"檔案名稱: {key} \n"
                             cunt += 1
-                        print("value: ", eachvalue, "\n")
-                        result += f"value: {eachvalue} \n"
-        return result
-        # print("-----------查詢完畢，請按任意鍵結束-----------\n")
+                        print("內容: ", eachvalue, "\n")
+                        result += f"內容: {eachvalue} \n"
+                result += "\n"
+        result = result.strip()
+        return result if result else "很抱歉，您輸入的關鍵字查無結果。"
         # msvcrt.getch()
 
 
