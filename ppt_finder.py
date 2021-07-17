@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 from create_index_2 import Ui_Form
 from ppt_functions.Powerpoint_find_keyword import PowerPoint_keyword_search
 
@@ -27,12 +28,18 @@ class Ui_MainWindow(object):
         self.plainTextEdit_output.clear()
         text_value = self.plainTextEdit_input.toPlainText()
         print(text_value)
-        result = ppt_finder.decode_find_keyword(text_value)
-        font = QtGui.QFont()
-        font.setFamily("微軟正黑體")
-        font.setPointSize(12)
-        self.plainTextEdit_output.setFont(font)
-        self.plainTextEdit_output.insertPlainText(result)
+        try:
+            result = ppt_finder.decode_find_keyword(text_value)
+            font = QtGui.QFont()
+            font.setFamily("微軟正黑體")
+            font.setPointSize(12)
+            self.plainTextEdit_output.setFont(font)
+            self.plainTextEdit_output.insertPlainText(result)
+        except FileNotFoundError as e:
+            print(f"file not found: {e}")
+            QMessageBox.warning(self, "警告", "請先建立索引檔。")
+        except Exception as e:
+            print(f"search_process failed: {e}")
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
