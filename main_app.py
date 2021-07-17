@@ -1,7 +1,9 @@
 import sys
+
+from PyQt5.QtWidgets import QApplication, QMainWindow
+
+from configs.log_config import init_config, get_logger as logger
 from ppt_finder import Ui_MainWindow
-from PyQt5.QtWidgets import (QMainWindow,
-                             QApplication)
 
 
 class App(QMainWindow, Ui_MainWindow):
@@ -13,9 +15,12 @@ class App(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == '__main__':
+    init_config()
     app = QApplication(sys.argv)
     window = App()
+    logger().info("Start Application...")
     try:
         sys.exit(app.exec_())
     except SystemExit:
-        print('Closing Window...')
+        print('Closing Application...')
+        logger().info("Closing Application...")
