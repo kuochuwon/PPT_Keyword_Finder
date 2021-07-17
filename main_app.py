@@ -22,5 +22,4 @@ if __name__ == '__main__':
     try:
         sys.exit(app.exec_())
     except SystemExit:
-        print('Closing Application...')
         logger().info("Closing Application...")

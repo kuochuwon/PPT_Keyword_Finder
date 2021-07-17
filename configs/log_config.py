@@ -8,14 +8,6 @@ filename = "pptfinder"
 
 
 class BaseConfig:
-    # DEFAULT_LOG_FORMAT = '[%(asctime)s] [%(process)d] [%(levelname)s] [%(module)s.%(lineno)d.%(funcName)s] [%(threadName)s] %(message)s'
-    # DEFAULT_LOG_LEVEL = 'DEBUG'
-    # DEFAULT_LOG_FILE_COUNT = 30
-    # DEFAULT_LOG_FILE_PREFIX = '%Y-%m-%d'
-    # DEFAULT_LOG_FILE = Path("../log", f"{filename}.log")
-    # DEFAULT_LOG_WHEN = 'midnight'
-    # DEFAULT_LOG_INTERVAL = 1
-
     def __init__(self):
         # Load variables from environment
         self.LOG_FORMAT = '[%(asctime)s] [%(process)d] [%(levelname)s] [%(module)s.%(lineno)d.%(funcName)s] [%(threadName)s] %(message)s'
