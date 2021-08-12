@@ -6,8 +6,6 @@
 實現:
 先建立ppt library，結構為dict: key為檔名, value為list，list中塞該檔中不同的內容
 """
-# import win32com
-import logging
 import os
 import json
 import msvcrt
@@ -66,7 +64,6 @@ class PowerPoint_keyword_search():
                             result += f"內容: {eachvalue} \n"
                     result += "\n"
             result = result.strip()
-            # msvcrt.getch()
             return result if result else "很抱歉，您輸入的關鍵字查無結果。"
         except Exception as e:
             logger().error(f"find_keyword_from_library failed: {e}, keyword is: {keyword}")

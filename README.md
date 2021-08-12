@@ -1,7 +1,12 @@
 # 教會 PowerPoint 關鍵字查詢器
 
-## 簡介
+## 介紹
 本程式目的是**查詢教會禮拜簡報中，是否存在符合關鍵字的內容**，由於教會推行投影片電子化已久，每周都會製作對應的投影片，但**吟唱的聖詩、誦讀的聖經及信仰告白其實會常常重複**，為了減少重新製作所浪費的時間，開發此程式讓使用者能快速找到舊的投影片，直接複製到新的投影片。
+
+## 程式架構
+* [GitHub](https://github.com/kuochuwon/PPT_Keyword_Finder)
+* 範例照片
+  ![finder](https://imgur.com/vqJfAXa.jpg)
 
 ## 原理
 1. 先將原始PPT檔案轉換為純文字的索引檔
@@ -15,5 +20,4 @@
 * 到資料夾撈取符合條件的檔案
 
 
-## 原始檔
-[GitHub](https://github.com/kuochuwon/PPT_Keyword_Finder)
+## 參考
