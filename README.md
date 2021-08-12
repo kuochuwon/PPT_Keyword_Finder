@@ -9,4 +9,4 @@
 
   ![finder](https://imgur.com/vqJfAXa.jpg)
 
-For more information, please refer to [PPT Keyword Finder: PowerPoint 關鍵字查詢器](/ecW5VhbKQEe1lTqcgK5laQ)
+For more information, please refer to [PPT Keyword Finder: PowerPoint 關鍵字查詢器](https://hackmd.io/@kuochuwon/BJ_-Z7MgY)
