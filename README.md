@@ -1,7 +1,7 @@
 # 教會 PowerPoint 關鍵字查詢器
 
 ## 介紹
-本程式目的是**查詢教會禮拜簡報中，是否存在符合關鍵字的內容**
+本程式目的是查詢教會禮拜簡報中，是否存在符合關鍵字的內容
 
 ## 程式架構
 * [GitHub](https://github.com/kuochuwon/PPT_Keyword_Finder)
